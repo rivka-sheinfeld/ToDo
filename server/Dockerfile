@@ -10,7 +10,7 @@ ARG configuration=Release
 WORKDIR /src
 COPY ["TodoApi.csproj", "."]
 RUN ls -al
-RUN dotnet restore "ToDo/server/TodoApi.csproj"
+RUN dotnet restore "TodoApi.csproj"
 COPY . .
 WORKDIR "/src/ToDo/server"
 RUN dotnet build "TodoApi.csproj" -c $configuration -o /app/build
