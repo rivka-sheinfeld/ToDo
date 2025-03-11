@@ -9,6 +9,7 @@ FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG configuration=Release
 WORKDIR /src
 COPY ["TodoApi.csproj", "."]
+RUN ls -al
 RUN dotnet restore "ToDo/server/TodoApi.csproj"
 COPY . .
 WORKDIR "/src/ToDo/server"
